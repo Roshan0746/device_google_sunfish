@@ -447,7 +447,13 @@ on property:sys.boot_completed=1
     write /sys/block/sde/queue/iostats 0
     write /sys/block/sdf/queue/nr_requests 128
     write /sys/block/sdf/queue/iostats 0
-
+    write /sys/block/sdb/queue/nr_requests 128
+    write /sys/block/sdb/queue/iostats 0
+    write /sys/block/sdc/queue/nr_requests 128
+    write /sys/block/sdc/queue/iostats 0
+    write /sys/block/sdd/queue/nr_requests 128
+    write /sys/block/sdd/queue/iostats 0
+   
     # Back to default VM settings
     write /proc/sys/vm/dirty_expire_centisecs 3000
     write /proc/sys/vm/dirty_background_ratio 10
@@ -458,7 +464,7 @@ on property:sys.boot_completed=1
 
     # Setup runtime cpusets
     write /dev/cpuset/top-app/cpus 0-7
-    write /dev/cpuset/foreground/cpus 3,5-6
+    write /dev/cpuset/foreground/cpus 3,5-7
     write /dev/cpuset/background/cpus 0-3
     write /dev/cpuset/system-background/cpus 0-1
     write /dev/cpuset/restricted/cpus 0-3
